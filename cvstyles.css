@@ -1,0 +1,90 @@
+/* ==========================================
+   SIMPLE CLEAN THEME FOR CV SITE
+   ========================================== */
+
+:root{
+  --bg:#fffffe;
+  --card:#cfd3eb;
+  --text:#000000;
+  --text-2:#000000;
+  --border:#000000;
+  --brand:#cdcccc;
+  --shadow:0 1px 0 rgba(0,0,0,0.3);
+}
+
+/* Base layout */
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+.container{max-width:1000px;margin-inline:auto;padding:24px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.pad{padding:18px;}
+.small{font-size:14px;}
+.muted{color:var(--text-2);}
+
+/* Header / Navigation */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in oklab,var(--bg) 92%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.name{margin:0;font-size:clamp(22px,4vw,28px);color:var(--text);}
+.role{margin:0;color:var(--text-2);font-size:14px;}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px color-mix(in oklab,var(--brand) 35%, transparent);}
+nav a{color:var(--text-2);text-decoration:none;padding:10px 12px;border-radius:8px;transition:background .15s,color .15s;}
+nav a:hover{color:var(--text);background:rgba(0,0,0,0.05);}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  font-weight:600;text-decoration:none;
+  transition:transform .1s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+.btn.primary{background:var(--brand);color:#000;}
+.btn.ghost{background:transparent;}
+.link{background:transparent;border:none;color:var(--text);cursor:pointer;}
+
+/* Hero Section */
+.hero{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:20px;}
+.hero-left{display:flex;flex-direction:column;gap:12px;}
+.lead{font-size:18px;color:var(--text);}
+.hero-right h2{margin:0 0 10px;color:var(--text);}
+.quick{list-style:none;padding:0;margin:0;display:grid;gap:8px;}
+.quick a{color:var(--text);text-decoration:none;}
+.quick a:hover{text-decoration:underline;}
+
+/* Sections */
+h2{font-size:22px;margin:20px 0 10px;color:var(--text);}
+h3{color:var(--text);}
+.grid{display:grid;gap:16px;}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none;}
+.tags li{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.6);border:1px solid var(--border);font-size:13px;color:var(--text);}
+.bullets{padding-left:18px;}
+
+/* Contact */
+.contact{padding:16px;border-radius:12px;}
+
+/* Footer */
+footer{padding:24px 0 64px;text-align:center;color:var(--text-2);}
+
+/* Responsive */
+@media(max-width:800px){.hero{grid-template-columns:1fr;}}
