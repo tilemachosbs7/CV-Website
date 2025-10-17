@@ -1,11 +1,9 @@
-// ==================================================
-//  JS for the CV website
-// ==================================================
+// JS for the CV website
 
-// 1. Dynamic current year in footer
+// 1) Dynamic current year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// 2. Safe email display
+// 2) Email
 const EMAIL_USER = "tilemachosbs7";
 const EMAIL_DOMAIN = "gmail.com";
 const fullEmail = `${EMAIL_USER}@${EMAIL_DOMAIN}`;
@@ -15,7 +13,7 @@ if (emailEl) {
   emailEl.textContent = fullEmail;
 }
 
-// 3. Theme toggle (auto → dark → light)
+// 3) Theme toggle (auto → dark → light)
 const root = document.documentElement;
 const btn = document.getElementById("theme");
 
@@ -31,13 +29,12 @@ setTheme(saved || "auto");
 if (btn) {
   btn.addEventListener("click", () => {
     const current = root.getAttribute("data-theme") || "auto";
-    const next =
-      current === "auto" ? "dark" : current === "dark" ? "light" : "auto";
+    const next = current === "auto" ? "dark" : current === "dark" ? "light" : "auto";
     setTheme(next);
   });
 }
 
-// 4. Back-to-top button
+// 4) Back-to-top
 const backToTop = document.getElementById("backToTop");
 if (backToTop) {
   backToTop.addEventListener("click", () =>
